@@ -1,8 +1,3 @@
-/**
- * Register Form - JavaScript Functionality
- * Handles password strength checking and form submission
- */
-
 // ========== PASSWORD STRENGTH CHECKER ==========
 function checkPasswordStrength(password) {
     const passwordReqs = document.querySelector('.password-requirements');

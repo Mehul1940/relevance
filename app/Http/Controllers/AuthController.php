@@ -10,9 +10,6 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
-    /**
-     * Show login form
-     */
     public function showLogin()
     {
         if (Auth::check()) {
@@ -20,10 +17,7 @@ class AuthController extends Controller
         }
         return view('auth.login');
     }
-
-    /**
-     * Handle login
-     */
+    
     public function login(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -52,9 +46,6 @@ class AuthController extends Controller
             ->withInput($request->only('email'));
     }
 
-    /**
-     * Show registration form
-     */
     public function showRegister()
     {
         if (Auth::check()) {
@@ -63,9 +54,6 @@ class AuthController extends Controller
         return view('auth.register');
     }
 
-    /**
-     * Handle registration
-     */
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -92,7 +80,6 @@ class AuthController extends Controller
                 'password' => Hash::make($request->password),
             ]);
 
-            // Auto login after registration
             Auth::login($user);
 
             return redirect()->route('home')
@@ -104,9 +91,6 @@ class AuthController extends Controller
         }
     }
 
-    /**
-     * Logout user
-     */
     public function logout(Request $request)
     {
         Auth::logout();
@@ -116,18 +100,12 @@ class AuthController extends Controller
         return redirect()->route('home')->with('success', 'Logged out successfully!');
     }
 
-    /**
-     * Show user profile
-     */
     public function profile()
     {
         $user = Auth::user();
         return view('auth.profile', compact('user'));
     }
 
-    /**
-     * Update user profile
-     */
     public function updateProfile(Request $request)
     {
         $user = Auth::user();
@@ -151,17 +129,11 @@ class AuthController extends Controller
         return back()->with('success', 'Profile updated successfully!');
     }
 
-    /**
-     * Show change password form
-     */
     public function showChangePassword()
     {
         return view('auth.change-password');
     }
 
-    /**
-     * Handle change password
-     */
     public function changePassword(Request $request)
     {
         $validator = Validator::make($request->all(), [

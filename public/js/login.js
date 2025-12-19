@@ -1,8 +1,3 @@
-/**
- * Login Form - JavaScript Functionality
- * Handles form submission and interactions
- */
-
 // ========== PASSWORD TOGGLE VISIBILITY ==========
 document.addEventListener('DOMContentLoaded', function() {
     const togglePasswordBtn = document.getElementById('togglePassword');

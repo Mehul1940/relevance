@@ -1,8 +1,3 @@
-/**
- * About Page - JavaScript Functionality
- * Handles animations, interactions, and dynamic features
- */
-
 // ========== PAGE LOAD ANIMATIONS ==========
 document.addEventListener('DOMContentLoaded', function() {
     initializeAnimations();
