@@ -13,10 +13,7 @@
             <div class="about-content">
                 <div class="about-text">
                     <h2>About Relevance</h2>
-                    <p>Relevance was founded in 2020 with a simple yet powerful vision: to make quality products accessible to everyone. We believed that online shopping should be easy, secure, and enjoyable for all.</p>
-                    <p>Starting from a small team of passionate individuals, we've grown to serve thousands of satisfied customers across the country. Our commitment to excellence and customer satisfaction has never wavered.</p>
-                    <p>Today, we partner with trusted brands and suppliers to bring you the latest products at competitive prices. Every product in our catalog is carefully selected to ensure quality and value.</p>
-
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam tenetur in velit maxime vel earum iure laborum eius quam facere nobis impedit nostrum, animi error, sunt incidunt non esse aut, accusantium suscipit odio illo.</p>
                     <div class="about-features">
                         <div class="feature-item">
                             <div class="feature-icon">🚀</div>

@@ -22,9 +22,6 @@
             </div>
         </div>
 
-        <!-- Overlay -->
-        <div class="hero-overlay"></div>
-
         <!-- Content -->
         <div class="hero-content">
             <h1>Welcome to Relevance</h1>
@@ -80,8 +77,7 @@
                 <div class="col-md-4 mb-4">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="{{ asset('images/product/1.jpeg') }}" alt="Smart Watch Pro">
-                            <div class="product-badge">Sale</div>
+                            <img src="{{ asset('images/product/1.jpeg') }}" alt="Smart Watch Pro">                            
                         </div>
                         <div class="product-info">
                             <div class="product-title">Smart Watch Pro</div>
@@ -109,8 +105,7 @@
                 <div class="col-md-4 mb-4">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="{{ asset('images/product/3.jpeg') }}" alt="Gaming Laptop">
-                            <div class="product-badge">Hot</div>
+                            <img src="{{ asset('images/product/3.jpeg') }}" alt="Gaming Laptop">                    
                         </div>
                         <div class="product-info">
                             <div class="product-title">Gaming Laptop</div>

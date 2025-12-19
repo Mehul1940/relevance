@@ -4,12 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\AuthController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-*/
-
 // Page Routes
 Route::controller(PagesController::class)->group(function () {
     Route::get('/', 'index')->name('home');
@@ -33,7 +27,7 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('/logout', 'logout')->name('logout')->middleware('auth');
 });
 
-// Protected Routes (Authenticated users only)
+// Protected Routes 
 Route::middleware('auth')->group(function () {
     Route::controller(AuthController::class)->group(function () {
         Route::get('/profile', 'profile')->name('profile');

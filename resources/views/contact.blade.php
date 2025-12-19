@@ -294,18 +294,12 @@
             }
         }
 
-        /* Success Message */
+        /* Error Alert */
         .alert {
             padding: 15px 20px;
             border-radius: 8px;
             margin-bottom: 20px;
             animation: slideDown 0.3s ease;
-        }
-
-        .alert-success {
-            background: #d4edda;
-            color: #155724;
-            border-left: 4px solid #28a745;
         }
 
         .alert-danger {
@@ -344,17 +338,14 @@
                 <div class="contact-info">
                     <div>
                         <h2>Let's Talk</h2>
-                        <p>Have questions or feedback? Our friendly team is here to help. Reach out to us through any of the channels below.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum accusantium aliquid veniam recusandae excepturi libero illo quod, sapiente aliquam sint vitae maiores ea, iure mollitia. Vel quam voluptas aspernatur molestiae accusantium culpa dolorum, expedita, velit fugit numquam enim exercitationem odio sed iste cumque repellat omnis.   </p>
                     </div>
 
                     <div class="info-item">
                         <div class="info-icon">📍</div>
                         <div class="info-title">Our Address</div>
                         <div class="info-text">
-                            Relevance Headquarters<br>
-                            123 Shopping Street<br>
-                            Mumbai, Maharashtra 400001<br>
-                            India
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis eaque alias in mollitia minima tempore magni debitis porro, officia facilis deleniti explicabo recusandae saepe totam est error ut velit laudantium voluptas quod aliquid dolorem.
                         </div>
                     </div>
 
@@ -362,27 +353,9 @@
                         <div class="info-icon">📞</div>
                         <div class="info-title">Phone</div>
                         <div class="info-text">
-                            <a href="tel:+919876543210">+91 98765 43210</a><br>
-                            <a href="tel:+918765432109">+91 87654 32109</a><br>
+                            <a href="tel:+919876543210">+91 8000696914</a><br>
+                            <a href="tel:+918765432109">+91 9913164123</a><br>
                             <small style="color: #999; display: block; margin-top: 8px;">Mon - Sat: 9:00 AM - 7:00 PM IST</small>
-                        </div>
-                    </div>
-
-                    <div class="info-item">
-                        <div class="info-icon">✉️</div>
-                        <div class="info-title">Email</div>
-                        <div class="info-text">
-                            <a href="mailto:info@relevance.com">info@relevance.com</a><br>
-                            <a href="mailto:support@relevance.com">support@relevance.com</a><br>
-                            <a href="mailto:sales@relevance.com">sales@relevance.com</a>
-                        </div>
-                    </div>
-
-                    <div class="info-item">
-                        <div class="info-icon">⏱️</div>
-                        <div class="info-title">Response Time</div>
-                        <div class="info-text">
-                            We aim to respond to all inquiries within 24 hours. For urgent matters, please call our hotline.
                         </div>
                     </div>
                 </div>
@@ -391,12 +364,6 @@
                 <div class="contact-form">
                     <h3>Send us a Message</h3>
                     <p>Fill out the form below and we'll get back to you shortly</p>
-
-                    @if (session('success'))
-                        <div class="alert alert-success">
-                            ✓ {{ session('success') }}
-                        </div>
-                    @endif
 
                     @if ($errors->any())
                         <div class="alert alert-danger">
@@ -490,36 +457,6 @@
 
                         <button type="submit" class="btn-submit">Send Message</button>
                     </form>
-
-                    <div class="social-links">
-                        <a href="#" class="social-link" title="Facebook">f</a>
-                        <a href="#" class="social-link" title="Twitter">𝕏</a>
-                        <a href="#" class="social-link" title="Instagram">📷</a>
-                        <a href="#" class="social-link" title="LinkedIn">in</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Business Hours -->
-            <div class="business-hours">
-                <h3>Business Hours</h3>
-                <div class="hours-list">
-                    <div class="hour-item">
-                        <span class="hour-day">Monday - Friday</span>
-                        <span class="hour-time">9:00 AM - 9:00 PM</span>
-                    </div>
-                    <div class="hour-item">
-                        <span class="hour-day">Saturday</span>
-                        <span class="hour-time">10:00 AM - 8:00 PM</span>
-                    </div>
-                    <div class="hour-item">
-                        <span class="hour-day">Sunday</span>
-                        <span class="hour-time">11:00 AM - 7:00 PM</span>
-                    </div>
-                    <div class="hour-item">
-                        <span class="hour-day">Public Holidays</span>
-                        <span class="hour-time">Closed</span>
-                    </div>
                 </div>
             </div>
         </div>

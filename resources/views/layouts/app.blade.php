@@ -6,270 +6,10 @@
     <title>@yield('title') - Relevance</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
-        }
-
-        .navbar {
-            background: linear-gradient(135deg, #2c3e50 0%, #3d5564 100%);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 1rem 0;
-        }
-
-        .navbar-brand {
-            font-size: 24px;
-            font-weight: 700;
-            color: #fff !important;
-            transition: all 0.3s ease;
-        }
-
-        .navbar-brand:hover {
-            transform: translateX(3px);
-        }
-
-        .nav-link {
-            color: rgba(255, 255, 255, 0.8) !important;
-            font-weight: 500;
-            margin: 0 10px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-link:hover {
-            color: #fff !important;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #667eea;
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .nav-link.active {
-            color: #667eea !important;
-        }
-
-        .navbar-toggler {
-            border: none;
-            padding: 5px 10px;
-        }
-
-        .navbar-toggler:focus {
-            box-shadow: none;
-            outline: 1px solid rgba(255, 255, 255, 0.5);
-        }
-
-        .navbar-collapse {
-            justify-content: flex-end;
-        }
-
-        .auth-buttons {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .btn-login {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-            padding: 8px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            font-size: 14px;
-        }
-
-        .btn-login:hover {
-            background: white;
-            color: #2c3e50;
-        }
-
-        .btn-register {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 8px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            font-size: 14px;
-        }
-
-        .btn-register:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-            color: white;
-        }
-
-        .user-dropdown {
-            color: white !important;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .dropdown-menu {
-            border-radius: 8px;
-            border: none;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .dropdown-item {
-            padding: 10px 20px;
-            transition: all 0.3s ease;
-        }
-
-        .dropdown-item:hover {
-            background: #667eea;
-            color: white;
-        }
-
-        .dropdown-item.logout:hover {
-            background: #dc3545;
-        }
-
-        .alert {
-            border-radius: 10px;
-            border: none;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            animation: slideDown 0.3s ease;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .alert-success {
-            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
-            color: #155724;
-            border-left: 4px solid #28a745;
-        }
-
-        .alert-danger {
-            background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
-            color: #721c24;
-            border-left: 4px solid #dc3545;
-        }
-
-        .alert-warning {
-            background: linear-gradient(135deg, #fff3cd 0%, #ffeeba 100%);
-            color: #856404;
-            border-left: 4px solid #ffc107;
-        }
-
-        .alert-info {
-            background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
-            color: #0c5460;
-            border-left: 4px solid #17a2b8;
-        }
-
-        footer {
-            background: linear-gradient(135deg, #2c3e50 0%, #3d5564 100%);
-            color: white;
-            padding: 40px 0;
-            margin-top: 60px;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .footer-section h5 {
-            color: #667eea;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .footer-section ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-section li {
-            margin-bottom: 10px;
-        }
-
-        .footer-section a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .footer-section a:hover {
-            color: #667eea;
-            padding-left: 5px;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
-            text-align: center;
-        }
-
-        .footer-bottom p {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        @media (max-width: 768px) {
-            .auth-buttons {
-                flex-direction: column;
-                gap: 10px;
-                width: 100%;
-            }
-
-            .btn-login,
-            .btn-register {
-                width: 100%;
-                text-align: center;
-            }
-
-            .navbar-nav {
-                padding-top: 20px;
-            }
-
-            .nav-link {
-                padding: 10px 0 !important;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
-        }
-    </style>
+    <link href="{{ asset('css/index.css') }}" rel="stylesheet">
     @yield('styles')
 </head>
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="{{ route('home') }}">
@@ -315,20 +55,20 @@
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                                 <li>
                                     <a class="dropdown-item" href="{{ route('profile') }}">
-                                        <i class="fas fa-user"></i> My Profile
+                                        <i class="fas fa-user me-2"></i> My Profile
                                     </a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item" href="{{ route('password.change') }}">
-                                        <i class="fas fa-lock"></i> Change Password
+                                        <i class="fas fa-lock me-2"></i> Change Password
                                     </a>
                                 </li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li>
-                                    <form method="POST" action="{{ route('logout') }}" style="display: inline;">
+                                    <form method="POST" action="{{ route('logout') }}" style="display: contents;">
                                         @csrf
                                         <button type="submit" class="dropdown-item logout" style="cursor: pointer; border: none; background: none; width: 100%; text-align: left;">
-                                            <i class="fas fa-sign-out-alt"></i> Logout
+                                            <i class="fas fa-sign-out-alt me-2"></i> Logout
                                         </button>
                                     </form>
                                 </li>
@@ -347,44 +87,20 @@
         </div>
     </nav>
 
-    <div class="container mt-4">
-        @if (session('success'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <i class="fas fa-check-circle"></i> <strong>Success!</strong> {{ session('success') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            </div>
-        @endif
+    <!-- Toaster Container -->
+    <div class="toast-container" id="toastContainer"></div>
 
-        @if (session('error'))
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <i class="fas fa-exclamation-circle"></i> <strong>Error!</strong> {{ session('error') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            </div>
-        @endif
-
-        @if (session('warning'))
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <i class="fas fa-exclamation-triangle"></i> <strong>Warning!</strong> {{ session('warning') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            </div>
-        @endif
-
-        @if (session('info'))
-            <div class="alert alert-info alert-dismissible fade show" role="alert">
-                <i class="fas fa-info-circle"></i> {{ session('info') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            </div>
-        @endif
-    </div>
-
-    @yield('content')
+    <!-- Main Content -->
+    <main id="mainContent">
+        @yield('content')
+    </main>
 
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h5>About Relevance</h5>
-                    <p>Your one-stop solution for quality products at competitive prices. We're committed to delivering excellence in every interaction.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, ad. Rem ratione earum sequi sunt! Sunt, fugit non. Aliquam, sit, corrupti dolor fugit omnis impedit quam possimus tenetur laudantium, voluptatibus nisi assumenda neque illum!</p>
                 </div>
                 <div class="footer-section">
                     <h5>Quick Links</h5>
@@ -407,20 +123,96 @@
                 <div class="footer-section">
                     <h5>Contact Us</h5>
                     <ul>
-                        <li><a href="tel:+919876543210"><i class="fas fa-phone"></i> +91 98765 43210</a></li>
-                        <li><a href="mailto:info@relevance.com"><i class="fas fa-envelope"></i> info@relevance.com</a></li>
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Mumbai, India</a></li>
+                        <li><a href="tel:+919876543210"><i class="fas fa-phone"></i> +91 8000696914</a></li>
+                        <li><a href="mailto:info@relevance.com"><i class="fas fa-envelope"></i> bokdemehul870@gmail.com</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Ahemdabad, India</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2024 Relevance Store. All rights reserved. | Built with <i class="fas fa-heart" style="color: #dc3545;"></i> by Your Team</p>
+                <p>&copy; 2024 Relevance Store. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Toaster Notification Function
+        function showToast(title, message, type = 'info', duration = 5000) {
+            const toastContainer = document.getElementById('toastContainer');
+            
+            const icons = {
+                success: 'fas fa-check-circle',
+                error: 'fas fa-times-circle',
+                warning: 'fas fa-exclamation-circle',
+                info: 'fas fa-info-circle'
+            };
+
+            const toastWrapper = document.createElement('div');
+            toastWrapper.className = 'toast-wrapper';
+
+            const toastContent = `
+                <div class="toast-notification ${type}">
+                    <i class="toast-icon ${icons[type]}"></i>
+                    <div class="toast-content">
+                        <div class="toast-title">${title}</div>
+                        <div class="toast-message">${message}</div>
+                    </div>
+                    <button class="toast-close" type="button">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            `;
+
+            toastWrapper.innerHTML = toastContent;
+            toastContainer.appendChild(toastWrapper);
+
+            const closeBtn = toastWrapper.querySelector('.toast-close');
+            closeBtn.addEventListener('click', function() {
+                toastWrapper.classList.add('hide');
+                setTimeout(() => toastWrapper.remove(), 400);
+            });
+
+            setTimeout(() => {
+                if (toastWrapper.parentNode) {
+                    toastWrapper.classList.add('hide');
+                    setTimeout(() => toastWrapper.remove(), 400);
+                }
+            }, duration);
+        }
+
+        // Convert session alerts to toasts
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check for session alerts in the page
+            const htmlContent = document.documentElement.innerHTML;
+            
+            // Check for success message
+            @if (session('success'))
+                showToast('Success!', '{{ session('success') }}', 'success');
+            @endif
+
+            // Check for error message
+            @if (session('error'))
+                showToast('Error!', '{{ session('error') }}', 'error');
+            @endif
+
+            // Check for warning message
+            @if (session('warning'))
+                showToast('Warning!', '{{ session('warning') }}', 'warning');
+            @endif
+
+            // Check for info message
+            @if (session('info'))
+                showToast('Info', '{{ session('info') }}', 'info');
+            @endif
+        });
+
+        // Expose showToast to global scope for use in other pages
+        window.showToast = showToast;
+    </script>
+
     @yield('scripts')
 </body>
 </html>
